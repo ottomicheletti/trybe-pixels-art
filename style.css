@@ -1,9 +1,8 @@
 :root {
-  --cor1: #000;
-  --cor2: #2a9d8f;
-  --cor3: #e9c46a;
-  --cor4: #f4a261;
-  --cor5: #e76f51;
+  --cor1: black;
+  --cor2: lightgreen;
+  --cor3: lightblue;
+  --cor4: orange;
 }
 
 * {
@@ -51,7 +50,7 @@ h2 {
 }
 
 #cor1 {
-  background-color: var(--cor1);
+  background-color: black;
 }
 
 #cor2 {
@@ -64,10 +63,6 @@ h2 {
 
 #cor4 {
   background-color: var(--cor4);
-}
-
-#cor5 {
-  background-color: var(--cor5);
 }
 
 /* Pixel board */
