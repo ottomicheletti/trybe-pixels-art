@@ -81,19 +81,56 @@ function paintPixels() {
 }
 paintPixels();
 
+// Requisito 10 - Faça o quadro de pixels ter seu tamanho definido pelo usuário
+function changeCanvasSize() {
+  document.addEventListener('click', function (event) {
+    let canvas = document.getElementById('pixel-board').children;
+    let pixelBoard = document.getElementById('pixel-board');
+    // let div = document.createElement('div');
+    let size = document.getElementById('board-size');
+
+    if (size.value >= 50) {
+      size.value = 50;
+    } else if (size.value <= 5 && size.value > 0) {
+      size.value = 5;
+    } else if (
+      size.value === 0 ||
+      size.value === null ||
+      size.value === false ||
+      size.value === undefined ||
+      size.value === ''
+    ) {
+      alert('Board inválido!');
+    }
+
+    if (event.target.classList.contains('generate-board')) {
+      // remove os pixels atuais
+      for (let index1 = canvas.length - 1; index1 >= 0; index1 -= 1) {
+        canvas[index1].remove();
+      }
+
+      // cria X pixels no canvas
+      for (let index2 = 0; index2 < size.value ** 2; index2 += 1) {
+        let div = document.createElement('div');
+        div.className = 'pixel';
+        pixelBoard.appendChild(div);
+      }
+      pixelBoard.style.width = `${size.value * 42}px`;
+    }
+  });
+}
+changeCanvasSize();
+
 // Requisito 9 - Cria botão que reseta o quadro com a cor branca
 function cleanMyCanvas() {
-  let button = document.getElementById('clear-board');
-  let pixels = document.querySelectorAll('.pixel');
+  document.addEventListener('click', function (event) {
+    let pixels = document.getElementsByClassName('pixel');
 
-  console.log(pixels);
-
-  button.onclick = function clear() {
-    for (let index = 0; index < pixels.length; index += 1) {
-      pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
+    if (event.target.classList.contains('clear-board')) {
+      for (let index = 0; index < pixels.length; index += 1) {
+        pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
+      }
     }
-  };
+  });
 }
 cleanMyCanvas();
-
-// Requisito 10 - Faça o quadro de pixels ter seu tamanho definido pelo usuário

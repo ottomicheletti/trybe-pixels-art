@@ -40,8 +40,10 @@ h2 {
   border: 1px black solid;
 }
 
-/* Botão - Requisito 9 */
-#clear-board {
+/* Botões - Requisito 9 e 10*/
+#clear-board,
+#generate-board,
+#board-size {
   padding: 3px;
   border: 1px black solid;
 }
