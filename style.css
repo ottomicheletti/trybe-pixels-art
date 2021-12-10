@@ -6,6 +6,7 @@
 main {
   width: 80%;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* Titulo e subtítulo do projeto */
@@ -39,8 +40,13 @@ h2 {
   border: 1px black solid;
 }
 
-/* Pixel board  - Requisito 4*/
+/* Botão - Requisito 9 */
+#clear-board {
+  padding: 3px;
+  border: 1px black solid;
+}
 
+/* Pixel board  - Requisito 4*/
 #pixel-board {
   width: 210px;
   margin: 1em auto;

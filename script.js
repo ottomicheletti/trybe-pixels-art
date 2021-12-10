@@ -80,3 +80,20 @@ function paintPixels() {
   });
 }
 paintPixels();
+
+// Requisito 9 - Cria botão que reseta o quadro com a cor branca
+function cleanMyCanvas() {
+  let button = document.getElementById('clear-board');
+  let pixels = document.querySelectorAll('.pixel');
+
+  console.log(pixels);
+
+  button.onclick = function clear() {
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
+    }
+  };
+}
+cleanMyCanvas();
+
+// Requisito 10 - Faça o quadro de pixels ter seu tamanho definido pelo usuário
